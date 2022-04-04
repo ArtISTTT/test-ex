@@ -11,3 +11,12 @@
   color: var(--secondary);
   margin-bottom: 22px;
 }
+
+.filter {
+  margin-bottom: 22px;
+
+  label {
+    color: var(--secondary);
+    margin-left: 8px;
+  }
+}

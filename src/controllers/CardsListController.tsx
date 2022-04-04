@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import ItemsWrapper from '../components/ItemsWrapper';
 import { prepateItemsFromServer } from '../helpers/serverPreparing';
@@ -13,6 +13,8 @@ interface IProps {
 }
 
 const CardListController: React.FC<IProps> = ({items}) => {
+  const [filter, setFilter] = useState(false);
+
   const dispatch = useDispatch();
   useEffect(() => {
     const getItems = async () => {
@@ -28,9 +30,17 @@ const CardListController: React.FC<IProps> = ({items}) => {
     getItems();
   }, []);
 
+  const resultItems = useMemo(() => {
+    if (filter) {
+      return items.filter(item => item.quantityAvailable > 0);
+    }
+
+    return items;
+  }, [items, filter]);
+
   return <>
-    <Header />
-    <ItemsWrapper items={items}/>
+    <Header setFilter={setFilter} filter={filter}/>
+    <ItemsWrapper items={resultItems}/>
   </>;
 }
 
