@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
+import ItemsWrapper from '../components/ItemsWrapper';
 import { prepateItemsFromServer } from '../helpers/serverPreparing';
 import { itemsAPI } from '../queries';
 import { AppState } from '../reducers';
@@ -29,6 +30,7 @@ const CardListController: React.FC<IProps> = ({items}) => {
 
   return <>
     <Header />
+    <ItemsWrapper items={items}/>
   </>;
 }
 

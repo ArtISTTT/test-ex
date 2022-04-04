@@ -1,4 +1,4 @@
-import { IItem, IState } from '../../types';
+import { IState } from '../../types';
 import {
   UPDATE_ITEMS,
   itemsActionsType,

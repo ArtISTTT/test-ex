@@ -1,0 +1,18 @@
+:root {
+  --bg: #E5E5E5;
+  --white: #FFFFFF;
+  --secondary: #828282;
+  --light: #F3F3F3;
+  --gray: #808080;
+  --blue: #0947E6;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: "Open Sans", sans-serif;
+  margin: 32px;
+
+  @media (max-width: 576px) {
+    margin: 16px;
+  }
+}
