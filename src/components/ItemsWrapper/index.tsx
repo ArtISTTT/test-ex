@@ -10,7 +10,7 @@ interface IProps {
 const ItemsWrapper: React.FC<IProps> = ({items}) => {
 
   return <div className={style.itemsWrapper}>
-    {items.map(item => <Item item={item}/>)}
+    {items.map(item => <Item item={item} key={item.productId}/>)}
   </div>
 };
 

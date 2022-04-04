@@ -21,7 +21,7 @@ const Item: React.FC<IProps> = ({item}) => {
     <div className={style.infoBlock}>
       <div className={style.available}>
         <p>available</p>
-        <h4>{`${item.quantity} of ${item.quantityAvailable}`}</h4>
+        <h4>{`${item.quantityAvailable} of ${item.quantity}`}</h4>
       </div>
       <div className={style.price}>
         <p>price</p>
